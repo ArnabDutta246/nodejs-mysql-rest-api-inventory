@@ -1,0 +1,32 @@
+{
+  "name": "complete_inventory_system",
+  "version": "1.0.0",
+  "description": "rest api for inventory system using node express and mysql database",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./build/index.ts",
+    "build": "tsc -p .",
+    "dev": "nodemon ./src/index.ts"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql"
+  ],
+  "author": "ArnabDutta246",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7",
+    "ts-node": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.12",
+    "@types/mysql": "^2.15.18",
+    "@types/node": "^15.12.4",
+    "typescript": "^4.3.4"
+  }
+}
