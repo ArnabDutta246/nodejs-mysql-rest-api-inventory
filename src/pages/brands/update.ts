@@ -4,18 +4,17 @@ import { Connect, Query } from "../../database/db";
 import Brand from "../modals/brand";
 import ResponseObj from "../modals/response";
 
-export const createBrand = async (
+export const updateBrand = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   let currDate = new Date();
-  let { name, description } = req.body as Brand;
-  const values = [name, description, currDate];
+  let { id, name, description } = req.body as Brand;
+  const values = [name, description, id];
 
   // query string
-  const queryString =
-    "INSERT INTO brands(name,description,createdAt) VALUES (?,?,?)";
+  const queryString = `UPDATE brands SET name=?, description=? WHERE id=?`;
 
   // inset
   Connect()
@@ -25,7 +24,7 @@ export const createBrand = async (
           // logging.info(NAMESPACE, "Book created: ", result);
 
           return res.status(200).json({
-            ...responseFunction(200, "Data inserted successfully !!", result),
+            ...responseFunction(200, "Data updated successfully !!", result),
           });
         })
         .catch((error) => {
@@ -34,7 +33,7 @@ export const createBrand = async (
           return res.status(200).json({
             ...responseFunction(
               200,
-              "Data insertion process failed!!",
+              "Data updatation process failed!!",
               null,
               error
             ),
@@ -74,4 +73,4 @@ function responseFunction(
   } as ResponseObj;
 }
 
-export default createBrand;
+export default updateBrand;

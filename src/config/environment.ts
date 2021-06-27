@@ -3,7 +3,7 @@ dotenv.config();
 
 // mysql serve
 const MYSQL_HOST = process.env.DB_HOST || "localhost";
-const MYSQL_DATABASE = process.env.DB_NAME || "api_db";
+const MYSQL_DATABASE = process.env.DB_NAME || "inventory";
 const MYSQL_USER = process.env.DB_USER || "root";
 const MYSQL_PASS = process.env.DB_PWD || "";
 

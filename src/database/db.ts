@@ -1,10 +1,11 @@
-import mysql from "mysql";
+import mysql from "mysql2";
+import config from "../config/environment";
 
 const param = {
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PWD,
-  database: process.env.DB_NAME,
+  host: config.mysql.host,
+  user: config.mysql.user,
+  password: config.mysql.pass,
+  database: config.mysql.database,
 };
 
 const Connect = async () => {
